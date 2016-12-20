@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class newHouse extends AppCompatActivity {
     Context ctx = this;
     String HOUSE_NAME, POSTCODE;
-
+    public static int columnsize = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,18 +40,19 @@ public class newHouse extends AppCompatActivity {
         EditText post = (EditText)findViewById(R.id.postcode);
 
         try {
-            //workshop 7
-            //SharedPreferences userInfo = getSharedPreferences("userData", Context.MODE_PRIVATE);
-            //SharedPreferences.Editor editor = userInfo.edit();
-            //editor.putString("house", house.getText().toString());
-            //editor.putString("post", post.getText().toString());
-           // editor.commit();
-        HOUSE_NAME = house.getText().toString();
-        POSTCODE = post.getText().toString();
+           // workshop 7
+            SharedPreferences userInfo = getSharedPreferences("userData", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = userInfo.edit();
+            editor.putString("house", house.getText().toString());
+            editor.putString("post", post.getText().toString());
+            editor.commit();
+       // HOUSE_NAME = house.getText().toString();
+       // POSTCODE = post.getText().toString();
 
-        Context context = getApplicationContext();
-        DatabaseOperations db = new DatabaseOperations(ctx);
-        db.populateDatabase(db, HOUSE_NAME, POSTCODE);
+       Context context = getApplicationContext();
+      // DatabaseOperations db = new DatabaseOperations(ctx);
+      // db.populateDatabase(db, HOUSE_NAME, POSTCODE);
+      //     columnsize++;
         CharSequence text = "House saved";
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, text, duration);

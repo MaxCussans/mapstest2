@@ -2,6 +2,7 @@ package com.example.computing.mapstest2;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -33,6 +34,14 @@ public class DatabaseOperations extends SQLiteOpenHelper
 
         long db = sqldb.insert(TableData.TableInfo.TABLE_NAME, null, cvs );
         Log.d("Database Operations", "One row inserted");
+    }
+
+    public Cursor getData(DatabaseOperations dop)
+    {
+        SQLiteDatabase sqldb = dop.getReadableDatabase();
+        String[] columns = {TableData.TableInfo.HOUSE_NAME, TableData.TableInfo.POSTCODE};
+        Cursor cr = sqldb.query(TableData.TableInfo.TABLE_NAME, columns, null, null, null, null, null);
+        return cr;
     }
 
     @Override
