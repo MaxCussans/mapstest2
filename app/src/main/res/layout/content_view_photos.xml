@@ -22,5 +22,22 @@
         android:layout_marginStart="20dp"
         android:layout_marginBottom="51dp"
         android:id="@+id/Back"
-        android:onClick="onBack" />/>
+        android:onClick="onBack" />
+
+    <TextView
+        android:text="house"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/Back"
+        android:layout_marginTop="43dp"
+        android:id="@+id/showHouseName" />
+
+    <TextView
+        android:text="post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/showHouseName"
+        android:layout_alignStart="@+id/showHouseName"
+        android:id="@+id/showPostcode" />/>
 </RelativeLayout>
