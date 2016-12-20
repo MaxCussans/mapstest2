@@ -1,9 +1,11 @@
 package com.example.computing.mapstest2;
 
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -62,6 +64,24 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         }
     }
 
+    public void onclickPhotos(View view){
+        if(canUseCamera == true)
+        {
+            int REQUEST_IMAGE_CAPTURE = 1;
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    public void onclickView(View view)
+    {
+    }
+
+    public void onclickNew(View view)
+    {
+    }
+
+
     public void onMyLocationChange(Location myLocation, Address addressLocation)
     {
         //check if my location is close to address
@@ -69,6 +89,10 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         {
             //allow button to access camera
             canUseCamera = true;
+        }
+        else
+        {
+            canUseCamera = false;
         }
     }
 
