@@ -1,5 +1,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -12,7 +13,8 @@
         android:layout_height="match_parent"
         android:inputType="textPostalAddress"
         android:ems="10"
-        android:id="@+id/searchAddress" />
+        android:id="@+id/searchAddress"
+        android:autoText="false" />
 
         <Button
             android:text="Search"
@@ -23,10 +25,37 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="Take Photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button5"
+            android:onClick="onSearch" />
+
+        <Button
+            android:text="View Houses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button4"
+            android:onClick="clock" />
+
+        <Button
+            android:text="New House"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/newHouse"
+            android:onClick="clicknewHouse" />
+
+    </LinearLayout>
+
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="361dp"
-    android:layout_height="466dp"
+    android:layout_height="471dp"
     android:id="@+id/map"
     tools:context=".MapsActivity2"
     android:name="com.google.android.gms.maps.SupportMapFragment" />

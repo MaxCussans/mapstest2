@@ -2,6 +2,7 @@ package com.example.computing.mapstest2;
 
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -20,7 +22,9 @@ import java.util.List;
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
+    private UiSettings myUISettings;
+    //bool switch so user can only use camera while close to a location
+    boolean canUseCamera = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +57,26 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
             Address address = addressList.get(0);
             LatLng addressLoc = new LatLng(address.getLatitude(), address.getLongitude());
             mMap.addMarker(new MarkerOptions().position(addressLoc).title("Marker"));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(addressLoc, 14.0f));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(addressLoc, 15.0f));
+
+        }
+    }
+
+    public void onMyLocationChange(Location myLocation, Address addressLocation)
+    {
+        //check if my location is close to address
+        if(((myLocation.getLatitude() <= addressLocation.getLatitude() + 0.00005) || (myLocation.getLatitude() >= addressLocation.getLatitude() - 0.0005)) && ((myLocation.getLongitude() <= addressLocation.getLongitude() + 0.00005) || (myLocation.getLongitude() >= addressLocation.getLongitude() - 0.0005)) )
+        {
+            //allow button to access camera
+            canUseCamera = true;
         }
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        myUISettings = mMap.getUiSettings();
+        myUISettings.setZoomControlsEnabled(true);
         mMap.setMyLocationEnabled(true);
     }
 }
