@@ -8,12 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class newHouse extends AppCompatActivity {
+public class viewPhotos extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_house);
+        setContentView(R.layout.activity_view_photos);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -27,14 +27,10 @@ public class newHouse extends AppCompatActivity {
         });
     }
 
-    public void onSave(View view)
-    {
-
-    }
-
-    public void onCancel(View view)
+    public void onBack(View view)
     {
         Intent intent = new Intent(this, MapsActivity2.class);
         startActivity(intent);
     }
+
 }

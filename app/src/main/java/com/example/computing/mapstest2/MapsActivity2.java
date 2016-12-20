@@ -65,7 +65,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     }
 
     public void onclickPhotos(View view){
-        if(canUseCamera == true)
+       // if(canUseCamera == true)
         {
             int REQUEST_IMAGE_CAPTURE = 1;
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -75,10 +75,14 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
     public void onclickView(View view)
     {
+        Intent intent = new Intent(this, viewPhotos.class);
+        startActivity(intent);
     }
 
     public void onclickNew(View view)
     {
+        Intent intent = new Intent(this, newHouse.class);
+        startActivity(intent);
     }
 
 

@@ -42,6 +42,10 @@
         <activity
             android:name=".newHouse"
             android:label="@string/title_activity_new_house"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".viewPhotos"
+            android:label="@string/title_activity_view_photos"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
