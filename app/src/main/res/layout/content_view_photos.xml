@@ -39,5 +39,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/showHouseName"
         android:layout_alignStart="@+id/showHouseName"
-        android:id="@+id/showPostcode" />/>
+        android:id="@+id/showPostcode" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/cast_abc_scrubber_control_off_mtrl_alpha"
+        android:layout_alignBottom="@+id/showPostcode"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="83dp"
+        android:id="@+id/houseImage" /><![CDATA[
+
+    />
+]]>
 </RelativeLayout>
