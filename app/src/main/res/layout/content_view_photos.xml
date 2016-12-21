@@ -48,8 +48,6 @@
         android:layout_alignBottom="@+id/showPostcode"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="83dp"
-        android:id="@+id/houseImage" /><![CDATA[
+        android:id="@+id/houseImage" />
 
-    />
-]]>
 </RelativeLayout>

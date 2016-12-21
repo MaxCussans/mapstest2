@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
@@ -47,6 +47,14 @@
         <activity
             android:name=".viewPhotos"
             android:label="@string/title_activity_view_photos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Flickr"
+            android:label="@string/title_activity_flickr"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".searchTweets"
+            android:label="@string/title_activity_twitter"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

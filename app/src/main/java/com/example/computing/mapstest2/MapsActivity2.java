@@ -1,9 +1,6 @@
 package com.example.computing.mapstest2;
 
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -12,7 +9,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -22,12 +18,8 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-
-import static android.R.attr.data;
 
 public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallback {
 
@@ -92,6 +84,12 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     public void onclickNew(View view)
     {
         Intent intent = new Intent(this, newHouse.class);
+        startActivity(intent);
+    }
+
+    public void onclickSearch(View view)
+    {
+        Intent intent = new Intent(this, searchTweets.class);
         startActivity(intent);
     }
 

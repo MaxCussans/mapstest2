@@ -31,24 +31,31 @@
 
         <Button
             android:text="Take Photos"
-            android:layout_width="132dp"
+            android:layout_width="97dp"
             android:layout_height="wrap_content"
             android:id="@+id/takePhotos"
             android:onClick="onclickPhotos" />
 
         <Button
             android:text="View Photos"
-            android:layout_width="wrap_content"
+            android:layout_width="96dp"
             android:layout_height="wrap_content"
             android:id="@+id/viewPhotos"
             android:onClick="onclickView" />
 
         <Button
             android:text="New House"
-            android:layout_width="116dp"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/newHouse"
             android:onClick="onclickNew" />
+
+        <Button
+            android:text="Search Tweets"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchFlickr"
+            android:onClick="onclickSearch" />
 
     </LinearLayout>
 
